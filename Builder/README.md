@@ -4,4 +4,4 @@ As you can see on the diagram below, I used an AbstractBuilder called WarriorBui
 
 Therefore, there is the extension of this AbstractBuilder to three different ConcreteBuilders: SorcererBuilder, KnightBuilder, and ElfBuilder. Each one of them extends the AbstractBuilder using their respective kind of Clothing and Weapon, represented by Enums. In the end, all of them are possible to build a final object of the type Warrior, with their respective kind of Clothing and Weapon.
 
-![alt text](https://github.com/Rick-Addiction/Design-Patterns-Studies/blob/master/Builder/WARRIOR_BUILDER.png?raw=true)
+![alt text](https://github.com/Rick-Addiction/Design-Patterns-Studies/blob/master/Builder/doc/WARRIOR_BUILDER.png?raw=true)
