@@ -2,4 +2,4 @@ Based on the imaginary scenario of a fantasy world which have different Blacksmi
 
 As you can see on the diagram, the abstract Blacksmith defines the equipment this kind of place can forge, and different concretes Blacksmiths extend it based on their forge pattern. Therefore, these concrete factories can build all the types of equipment following their specific construction pattern, which in the presented situation are Emperor, Corruption, and Mercenary.
 
-![alt text](https://github.com/Rick-Addiction/Design-Patterns-Studies/blob/master/Abstract Factory/doc/BLACKSMITH_FORGE.png?raw=true)
+<img src="https://github.com/Rick-Addiction/Design-Patterns-Studies/blob/master/Abstract Factory/doc/BLACKSMITH_FORGE.png?raw=true" width="100%"></img>
