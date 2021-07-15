@@ -1,4 +1,4 @@
-package warriorbuilder.warrior;
+package warriorreplication.warrior;
 
 public abstract class WarriorBuilder<S extends WarriorBuilder<S,C, W>
         , C, W> {

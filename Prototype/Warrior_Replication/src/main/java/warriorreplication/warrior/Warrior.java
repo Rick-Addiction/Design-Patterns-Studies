@@ -1,4 +1,4 @@
-package warriorbuilder.warrior;
+package warriorreplication.warrior;
 
 public class Warrior<C,W> {
     private String name;
@@ -31,6 +31,16 @@ public class Warrior<C,W> {
         this.weapon = weapon;
     }
 
+    public Warrior(){}
+
+    public Warrior(Warrior<C, W> basedWarrior, String nameNewWarrior) {
+        this.name=nameNewWarrior;
+        this.clothing=basedWarrior.clothing;
+        this.hairColor=basedWarrior.hairColor;
+        this.warriorClass=basedWarrior.warriorClass;
+        this.weapon=basedWarrior.weapon;
+    }
+
     @Override
     public String toString()
     {
@@ -38,5 +48,11 @@ public class Warrior<C,W> {
                 " called ["+name+ "]"+
                 " clothing a ["+ clothing + "] " + clothing.getClass().getSimpleName() +
                 " and holding a ["+weapon + "] "+ weapon.getClass().getSimpleName();
+    }
+
+    public Warrior<C,W> replicate(String nameNewWarrior){
+        return new Warrior<C,W>(
+                this,nameNewWarrior
+        );
     }
 }
