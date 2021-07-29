@@ -33,8 +33,8 @@ public class Warrior<C,W> {
 
     public Warrior(){}
 
-    public Warrior(Warrior<C, W> basedWarrior, String nameNewWarrior) {
-        this.name=nameNewWarrior;
+    public Warrior(Warrior<C, W> basedWarrior, String newWarriorName) {
+        this.name=newWarriorName;
         this.clothing=basedWarrior.clothing;
         this.hairColor=basedWarrior.hairColor;
         this.warriorClass=basedWarrior.warriorClass;
@@ -50,9 +50,9 @@ public class Warrior<C,W> {
                 " and holding a ["+weapon + "] "+ weapon.getClass().getSimpleName();
     }
 
-    public Warrior<C,W> replicate(String nameNewWarrior){
+    public Warrior<C,W> replicate(String newWarriorName){
         return new Warrior<C,W>(
-                this,nameNewWarrior
+                this,newWarriorName
         );
     }
 }
