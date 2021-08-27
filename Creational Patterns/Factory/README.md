@@ -2,4 +2,4 @@ In this fictitious scenario, there is an Elf who holds a Bow with him. And so, h
 
 As demonstrated on the diagram below, the abstract product is the Arrow, and there are three different types of implementation of this product. To manage the construction of these concrete products, the Factory class ArrowCraft can create the correct kind of Arrow according to the enum type received.
 
-![alt text](https://github.com/Rick-Addiction/Design-Patterns-Studies/blob/master/Factory/doc/ARROW_CRAFTING.png?raw=true)
+![alt text](https://github.com/Rick-Addiction/Design-Patterns-Studies/blob/master/Creational Patterns/Factory/doc/ARROW_CRAFTING.png?raw=true)
