@@ -1,9 +1,10 @@
 package warriorbuilder.warrior.sorcerer;
 
+import warriorbuilder.warrior.Warrior;
 import warriorbuilder.warrior.WarriorBuilder;
 import warriorbuilder.warrior.WarriorClass;
 
-public class SorcererBuilder extends WarriorBuilder<SorcererBuilder, Robe, Staff> {
+public class SorcererBuilder extends WarriorBuilder<SorcererBuilder> {
 
     public SorcererBuilder(){
         warrior.setWarriorClass(WarriorClass.SORCERER);
@@ -17,5 +18,11 @@ public class SorcererBuilder extends WarriorBuilder<SorcererBuilder, Robe, Staff
     public SorcererBuilder withStaff(Staff staff){
         warrior.setWeapon(staff);
         return this;
+    }
+
+
+    @Override
+    public Warrior build() {
+        return warrior;
     }
 }

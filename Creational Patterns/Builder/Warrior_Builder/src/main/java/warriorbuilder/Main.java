@@ -1,5 +1,6 @@
 package warriorbuilder;
 
+
 import warriorbuilder.warrior.HairColor;
 import warriorbuilder.warrior.elf.Bow;
 import warriorbuilder.warrior.elf.ElfBuilder;
@@ -38,6 +39,7 @@ public class Main {
                 .withStaff(Staff.INCINERATION);
 
         System.out.println(sb.build());
+
 
     }
 

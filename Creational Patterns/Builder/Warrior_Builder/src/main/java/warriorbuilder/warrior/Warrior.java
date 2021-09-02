@@ -1,15 +1,17 @@
 package warriorbuilder.warrior;
 
-public class Warrior<C,W> {
+
+public class Warrior<A> {
     private String name;
 
     private WarriorClass warriorClass;
 
     private HairColor hairColor;
 
-    private C clothing;
+    private IClothing clothing;
 
-    private W weapon;
+    private IWeapon weapon;
+
 
     public void setName(String name) {
         this.name = name;
@@ -23,11 +25,11 @@ public class Warrior<C,W> {
         this.hairColor = hairColor;
     }
 
-    public void setClothing(C clothing) {
+    public void setClothing(IClothing clothing) {
         this.clothing = clothing;
     }
 
-    public void setWeapon(W weapon) {
+    public void setWeapon(IWeapon weapon) {
         this.weapon = weapon;
     }
 
@@ -37,6 +39,6 @@ public class Warrior<C,W> {
         return "You have spawned a [" + hairColor+(warriorClass != null ? " "+ warriorClass : "")+ "] warrior" +
                 " called ["+name+ "]"+
                 " clothing a ["+ clothing + "] " + clothing.getClass().getSimpleName() +
-                " and holding a ["+weapon + "] "+ weapon.getClass().getSimpleName();
+                " and holding a ["+ weapon + "] "+ weapon.getClass().getSimpleName();
     }
 }

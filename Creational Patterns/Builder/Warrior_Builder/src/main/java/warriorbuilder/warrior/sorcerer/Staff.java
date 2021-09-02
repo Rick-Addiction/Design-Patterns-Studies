@@ -1,6 +1,8 @@
 package warriorbuilder.warrior.sorcerer;
 
-public enum Staff {
+import warriorbuilder.warrior.IWeapon;
+
+public enum Staff implements IWeapon {
 
     INCINERATION,
     MAGNUS,

@@ -1,6 +1,8 @@
 package warriorbuilder.warrior.sorcerer;
 
-public enum Robe {
+import warriorbuilder.warrior.IClothing;
+
+public enum Robe implements IClothing {
     MONK,
     DARK_MYSTIC,
     VELVET_RENAISSANCE;

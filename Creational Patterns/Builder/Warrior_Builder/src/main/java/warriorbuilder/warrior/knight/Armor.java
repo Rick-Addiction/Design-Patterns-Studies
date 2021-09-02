@@ -1,6 +1,8 @@
 package warriorbuilder.warrior.knight;
 
-public enum Armor {
+import warriorbuilder.warrior.IClothing;
+
+public enum Armor implements IClothing {
 
     HUNTER,
     TEMPLAR,

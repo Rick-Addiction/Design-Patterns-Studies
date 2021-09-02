@@ -1,6 +1,8 @@
 package warriorbuilder.warrior.elf;
 
-public enum Bow {
+import warriorbuilder.warrior.IWeapon;
+
+public enum Bow implements IWeapon {
 
     AGGRESSIVE,
     WINGED,

@@ -1,9 +1,8 @@
 package warriorbuilder.warrior;
 
-public abstract class WarriorBuilder<S extends WarriorBuilder<S,C, W>
-        , C, W> {
+public abstract class WarriorBuilder<S extends WarriorBuilder<S>>{
 
-    protected Warrior<C, W> warrior = new Warrior<>();
+    protected Warrior warrior = new Warrior();
 
     public S withName(String name){
         warrior.setName(name);
@@ -15,10 +14,7 @@ public abstract class WarriorBuilder<S extends WarriorBuilder<S,C, W>
         return self();
     }
 
-    public Warrior<C, W> build()
-    {
-        return warrior;
-    }
+    public abstract Warrior build();
 
     protected S self()
     {

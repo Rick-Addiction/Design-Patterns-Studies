@@ -1,9 +1,10 @@
 package warriorbuilder.warrior.knight;
 
+import warriorbuilder.warrior.Warrior;
 import warriorbuilder.warrior.WarriorBuilder;
 import warriorbuilder.warrior.WarriorClass;
 
-public class KnightBuilder extends WarriorBuilder<KnightBuilder, Armor, Sword> {
+public class KnightBuilder extends WarriorBuilder<KnightBuilder> {
 
     public KnightBuilder(){
         warrior.setWarriorClass(WarriorClass.KNIGHT);
@@ -19,5 +20,8 @@ public class KnightBuilder extends WarriorBuilder<KnightBuilder, Armor, Sword> {
         return this;
     }
 
-
+    @Override
+    public Warrior build() {
+        return warrior;
+    }
 }
