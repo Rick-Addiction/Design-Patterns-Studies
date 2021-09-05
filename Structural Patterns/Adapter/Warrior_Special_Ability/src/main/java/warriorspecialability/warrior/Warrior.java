@@ -16,6 +16,10 @@ public class Warrior<A> {
 
     private ISpecialAbilityAdapterFactory<A> specialAbilityAdapterFactory;
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -44,17 +48,17 @@ public class Warrior<A> {
         this.specialAbilityAdapterFactory = specialAbilityAdapterFactory;
     }
 
-    public void useAbility(A specialAbility){
+    public void useAbility(A specialAbility, String...destinations){
         ISpecialAbilityAdapter specialAbilityAdapter = specialAbilityAdapterFactory
                 .getSpecialAbilityAdapterBySpecialAbilityType(specialAbility);
 
-        specialAbilityAdapter.useSpecialAbility();
+        specialAbilityAdapter.useSpecialAbility(this, destinations);
     }
 
     @Override
     public String toString()
     {
-        return "You have spawned a [" + hairColor+(warriorClass != null ? " "+ warriorClass : "")+ "] warrior" +
+        return "\nYou have spawned a [" + hairColor+(warriorClass != null ? " "+ warriorClass : "")+ "] warrior" +
                 " called ["+name+ "]"+
                 " clothing a ["+ clothing + "] " + clothing.getClass().getSimpleName() +
                 " and holding a ["+ weapon + "] "+ weapon.getClass().getSimpleName();

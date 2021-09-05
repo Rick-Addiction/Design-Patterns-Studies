@@ -2,7 +2,7 @@ package warriorspecialability.specialability;
 
 public class Shielding {
 
-    public void createForceField(){
-        System.out.println("You have created a force filed around the warrior");
+    public void createForceField(String performer){
+        System.out.println(performer + " has created a force field");
     }
 }

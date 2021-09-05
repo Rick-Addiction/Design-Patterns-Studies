@@ -2,7 +2,7 @@ package warriorspecialability.specialability;
 
 public class Concentration {
 
-    public void startConcentrationMode(){
-        System.out.println("You are in the Concentration Mode");
+    public void startConcentrationMode(String performer){
+        System.out.println(performer + " has been activated the Concentration Mode");
     }
 }

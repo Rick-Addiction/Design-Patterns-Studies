@@ -1,7 +1,8 @@
 package warriorspecialability.specialability;
 
 public class Possession {
-    public void possesEnemy(){
-        System.out.println("You have possessed the enemy");
+    public void possesEnemy(String source, String enemy){
+
+        System.out.println(source + " has possessed "+enemy);
     }
 }

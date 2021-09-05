@@ -2,6 +2,10 @@ package warriorspecialability;
 
 
 import warriorspecialability.warrior.HairColor;
+import warriorspecialability.warrior.elf.Bow;
+import warriorspecialability.warrior.elf.ElfBuilder;
+import warriorspecialability.warrior.elf.Garb;
+import warriorspecialability.warrior.elf.specialabilityhandler.ElfSpecialAbility;
 import warriorspecialability.warrior.knight.Armor;
 import warriorspecialability.warrior.knight.KnightBuilder;
 import warriorspecialability.warrior.knight.Sword;
@@ -15,28 +19,41 @@ public class Main {
 
     public static void main(String[] args)
     {
-        var s = new SorcererBuilder()
+        var sorcerer = new SorcererBuilder()
                 .withName("JONAS")
                 .withHairColor(HairColor.BRUNETTE)
                 .withRobe(Robe.VELVET_RENAISSANCE)
                 .withStaff(Staff.INCINERATION).build();
 
-        System.out.println(s);
+        System.out.println(sorcerer);
 
-        s.useAbility(SorcererSpecialAbility.TELEKINESIS);
-        s.useAbility(SorcererSpecialAbility.SHIELDING);
+        sorcerer.useAbility(SorcererSpecialAbility.TELEKINESIS,"Container");
+        sorcerer.useAbility(SorcererSpecialAbility.SHIELDING,"William");
+        sorcerer.useAbility(SorcererSpecialAbility.HEALING,"William", "Jeff", "Camilla");
 
-        var k = new KnightBuilder()
+        var knight = new KnightBuilder()
                 .withName("HENRIQUE")
                 .withHairColor(HairColor.BLONDE)
                 .withArmor(Armor.MERCENARY)
                 .withSword(Sword.KATANA).build();
 
-        System.out.println(k);
+        System.out.println(knight);
 
-        k.useAbility(KnightSpecialAbility.BERSERK);
-        k.useAbility(KnightSpecialAbility.VERTICAL_STRIKE);
+        knight.useAbility(KnightSpecialAbility.BERSERK);
+        knight.useAbility(KnightSpecialAbility.CYCLONE,"Garry", "Thomas");
+        knight.useAbility(KnightSpecialAbility.VERTICAL_STRIKE, "Garry", "Thomas");
 
+        var elf = new ElfBuilder()
+                .withName("Stephan")
+                .withHairColor(HairColor.REDHEAD)
+                .withGarb(Garb.HUNTER)
+                .withBow(Bow.RAIDER).build();
+
+        System.out.println(elf);
+
+        elf.useAbility(ElfSpecialAbility.AGILITY);
+        elf.useAbility(ElfSpecialAbility.CONCENTRATION,"Garry", "Thomas");
+        elf.useAbility(ElfSpecialAbility.POSSESSION, "Rick");
 
     }
 

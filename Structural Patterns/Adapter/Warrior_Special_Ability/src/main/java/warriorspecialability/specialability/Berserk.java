@@ -2,7 +2,7 @@ package warriorspecialability.specialability;
 
 public class Berserk {
 
-    public void startBerserkMode(){
-        System.out.println("You are in the Berserk Mode");
+    public void startBerserkMode(String source){
+        System.out.println(source +" has been activated the Berserk Mode");
     }
 }
