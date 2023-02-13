@@ -1,6 +1,6 @@
-package warriorbuilder.warrior.elf;
+package warriorspawner.warrior.elf;
 
-import warriorbuilder.warrior.IWeapon;
+import warriorspawner.warrior.IWeapon;
 
 public enum Bow implements IWeapon {
 

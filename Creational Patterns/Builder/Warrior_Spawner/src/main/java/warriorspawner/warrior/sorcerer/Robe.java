@@ -1,6 +1,6 @@
-package warriorbuilder.warrior.sorcerer;
+package warriorspawner.warrior.sorcerer;
 
-import warriorbuilder.warrior.IClothing;
+import warriorspawner.warrior.IClothing;
 
 public enum Robe implements IClothing {
     MONK,

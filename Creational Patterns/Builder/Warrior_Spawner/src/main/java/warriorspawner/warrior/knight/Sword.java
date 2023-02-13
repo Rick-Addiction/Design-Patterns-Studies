@@ -1,6 +1,6 @@
-package warriorbuilder.warrior.knight;
+package warriorspawner.warrior.knight;
 
-import warriorbuilder.warrior.IWeapon;
+import warriorspawner.warrior.IWeapon;
 
 public enum Sword implements IWeapon {
 

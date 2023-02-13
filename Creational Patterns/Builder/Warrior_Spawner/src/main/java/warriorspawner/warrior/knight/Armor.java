@@ -1,6 +1,6 @@
-package warriorbuilder.warrior.knight;
+package warriorspawner.warrior.knight;
 
-import warriorbuilder.warrior.IClothing;
+import warriorspawner.warrior.IClothing;
 
 public enum Armor implements IClothing {
 

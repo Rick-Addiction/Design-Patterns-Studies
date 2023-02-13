@@ -1,4 +1,4 @@
-package warriorbuilder.warrior;
+package warriorspawner.warrior;
 
 public interface IClothing {
 }

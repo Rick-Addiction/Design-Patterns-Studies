@@ -1,4 +1,4 @@
-package warriorbuilder.warrior;
+package warriorspawner.warrior;
 
 
 public class Warrior<A> {

@@ -1,6 +1,6 @@
-package warriorbuilder.warrior;
+package warriorspawner.warrior;
 
-public abstract class WarriorBuilder<S extends WarriorBuilder<S>>{
+public abstract class WarriorAbstractSpawner<S extends WarriorAbstractSpawner<S>>{
 
     protected Warrior warrior = new Warrior();
 

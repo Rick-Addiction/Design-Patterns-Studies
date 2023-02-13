@@ -1,6 +1,6 @@
-package warriorbuilder.warrior.sorcerer;
+package warriorspawner.warrior.sorcerer;
 
-import warriorbuilder.warrior.IWeapon;
+import warriorspawner.warrior.IWeapon;
 
 public enum Staff implements IWeapon {
 

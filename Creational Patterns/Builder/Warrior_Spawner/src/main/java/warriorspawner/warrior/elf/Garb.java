@@ -1,6 +1,6 @@
-package warriorbuilder.warrior.elf;
+package warriorspawner.warrior.elf;
 
-import warriorbuilder.warrior.IClothing;
+import warriorspawner.warrior.IClothing;
 
 public enum Garb implements IClothing {
     EXECUTIONER,
