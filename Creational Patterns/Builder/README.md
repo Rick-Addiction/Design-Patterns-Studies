@@ -11,11 +11,11 @@ The Warrior Spawner needs to support the following warrior classes:
 	- **Clothing**: Elves wear GARBS such as EXECUTIONER, HUNTER, or FOREIGNER.
 	- **Weapon**: Elves use BOWS such as AGGRESSIVE, WINGED, or RAIDER.
 
-- ####Sorcerer:
+- #### Sorcerer:
 	- **Clothing**: Sorcerers wear ROBES such as MONK, DARK MYSTIC, or VELVET RENAISSANCE.
 	- **Weapon**: Sorcerers use STAFFS such as INCINERATION, MAGNUS, or CORRUPTION.
 
-- ####Knight:
+- #### Knight:
 	- **Clothing**: Knights wear ARMOR such as HUNTER, TEMPLAR, or MERCENARY.
 	- **Weapon**: Knights use SWORDS such as MYSTIC BLADE, MERCENARY BLADE, or KATANA.
 
@@ -38,7 +38,7 @@ To accomplish these requirements, you'll need a design pattern that can simplify
 
 We can use the **Builder Pattern** to solve this problem. The Builder Pattern **separates the construction of a complex object from its representation**, allowing us to create an object step-by-step and return it as a final product. In our case, we can use a concrete builder for each warrior class, such as **ElfConcreteSpawner**, **SorcererConcreteSpawner**, and **KnightConcreteSpawner**, to define the class-specific properties and behaviors. Each concrete builder implements a **WarriorAbstractSpawner** interface, which defines the common properties and methods for all warriors. For example, the **withName()** method is implemented in **WarriorAbstractSpawner**, so the concrete builders don't need to implement it themselves.
 
-<img src="https://github.com/Rick-Addiction/Design-Patterns-Studies/blob/master/Creational Patterns/Builder/doc/WARRIOR_Spawner.png?raw=true" width="100%"></img>
+<img src="https://github.com/Rick-Addiction/Design-Patterns-Studies/blob/master/Creational Patterns/Builder/doc/WARRIOR_SPAWNER.png?raw=true" width="100%"></img>
 
 Each concrete builder class needs to **implement the class-specific methods** to set the properties that are unique to that warrior class. For example, the **ElfConcreteSpawner** class needs to implement the **withGarb()** and **withBow()** methods to set the Garb and Bow properties of the elf warriors.
 
