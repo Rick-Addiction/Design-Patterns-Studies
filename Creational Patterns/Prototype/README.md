@@ -9,7 +9,7 @@ Creating warriors in an RPG game can be **tedious and time-consuming**, especial
 
 Furthermore, in case we want to **change a warrior's attribute**, we would need to manually **update all of its clones**, what would become difficult, especially if we had a large number of similar warriors.
 
-In order to solve this problem, we will need to find a way to **generate new warriors without having to manually set all of their attributes**, one by one. Besides that,  e need a way to update a warrior's attribute and have the **change immediately applied to all of its clones**.
+In order to solve this problem, we will need to find a way to **generate new warriors without having to manually set all of their attributes**, one by one. Besides that, we need a way to update a warrior's attribute and have the **change immediately applied to all of its clones**.
 
 ### Solution
 
