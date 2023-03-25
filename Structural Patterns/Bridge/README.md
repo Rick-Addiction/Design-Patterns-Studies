@@ -193,3 +193,113 @@ By this way, according to the equipment, the warrior will be able to attach a **
 Besides that, the **EnchantmentSet** class has methods for **adding** and **removing** enchantments, **activating** and **deactivating** the current enchantment, **switching** between enchantments, and **obtaining** the current enchantment. The **Equipment** class calls these methods to handle interactions between **equipment** and **enchantments**.
 
 By **decoupling the implementation of enchantments from equipments**, the Bridge design pattern **enhances the system's flexibility and adaptability**. With this approach, it is possible to create or remove equipment and enchantment classes **without impacting the existing code**.
+
+###  Why Bridge Pattern??
+
+The Bridge Pattern is a solution for this problem because:
+
+- **Greater flexibility and modularity in equipment and enchantment system**: To facilitate composition of various equipment and enchantments at runtime without requiring a complex inheritance hierarchy, the Bridge design allows the Equipment class to be abstracted away from the implementation of enchantments.
+
+- **Add new equipment or enchantments without modifying existing classes**: The complexity of the codebase can be reduced and maintainability increased by employing the Bridge pattern to add new types of equipment or enchantments without modifying current classes.
+
+- **Change enchantments at runtime without affecting other instances**: The Bridge pattern enables at-runtime attachment of enchantments to equipment instances without impacting other equipment instances. This makes the programming more adaptive and flexible to game changes.
+
+- **Scalable solution for equipment and enchantment system**: Using the Bridge design helps make the equipment and enchantment system more modular, which improves scalability and makes the codebase simpler to maintain.
+
+### How to Use the Code
+
+The Java code consists of the following files:
+
+- **Equipment**: An abstract class that represents the equipment that can be enchanted. This class has an instance of **EnchantmentSet** and provides methods to **add**, **remove**, **activate**, and **deactivate enchantments**.
+- **Weapon**: A concrete class that extends **Equipment** and represents a weapon. It provides a method to execute an attack and inherits the methods from **Equipment**.
+- **Clothing**: A concrete class that extends Equipment and represents clothing. It inherits the methods from Equipment.
+- **Enchantment**: An interface that defines the methods that an enchantment must have. This interface is implemented by different concrete enchantment classes, such as **FireEnchantment** and **IceEnchantment**.
+- **EnchantmentSet**: A class that represents the set of enchantments associated with an equipment instance. It stores a list of enchantments that can be **added**, **removed**, and** switched between**.
+
+Here is an example of how to use the code:
+
+```java
+public static void main(String[] args)
+    {
+        var knight = new KnightBuilder()
+                .withName("HENRIQUE")
+                .withHairColor(HairColor.BLONDE)
+                .withArmor(new MercenaryArmor())
+                .withSword(new EmperorBladeSword())
+                .build();
+
+        logger.info("{}", knight);
+
+        knight.handleWeapon().executeAttack();
+        knight.handleWeapon().addEnchantmentToSocket(new CorruptedMindEnchantment());
+        knight.handleWeapon().activateCurrentEnchantment();
+        knight.handleWeapon().deactivateCurrentEnchantment();
+        knight.handleWeapon().addEnchantmentToSocket(new FuryEnchantment());
+        knight.handleWeapon().removeEnchantment();
+        knight.handleWeapon().activateCurrentEnchantment();
+        knight.handleWeapon().nextEnchantment();
+        knight.handleWeapon().addEnchantmentToSocket(new SigilEnchantment());
+        knight.handleWeapon().activateCurrentEnchantment();
+        knight.handleWeapon().activateCurrentEnchantment();
+        knight.handleWeapon().deactivateCurrentEnchantment();
+        knight.handleWeapon().nextEnchantment();
+        knight.handleWeapon().previousEnchantment();
+        knight.handleWeapon().activateCurrentEnchantment();
+
+
+        var elf = new ElfBuilder()
+                .withName("ELLIE")
+                .withHairColor(HairColor.REDHEAD)
+                .withGarb(new ExecutionerGarb())
+                .withBow(new WingedBow())
+                .build();
+
+        logger.info("\n\n{}", elf);
+
+        elf.handleClothing().addEnchantmentToSocket(new SigilEnchantment());
+        elf.handleClothing().activateCurrentEnchantment();
+        elf.handleClothing().deactivateCurrentEnchantment();
+        elf.handleClothing().addEnchantmentToSocket(new FuryEnchantment());
+        elf.handleClothing().removeEnchantment();
+        elf.handleClothing().nextEnchantment();
+        elf.handleClothing().activateCurrentEnchantment();
+        elf.handleClothing().deactivateCurrentEnchantment();
+        elf.handleClothing().previousEnchantment();
+        elf.handleClothing().activateCurrentEnchantment();
+    }
+```
+In this example, first it is created a **Knight** named **"Henrique"** who wears a **Mercenary Armor** and wields an **Emperor Blade Sword**. The program then executes a series of method calls on the Knight object to **demonstrate the use of weapon enchantments.** After the Knight object, an **Elf** object named **"Ellie"** is created who wears an **Executioner Garb** and wields a **Winged Bow**. The program then executes a series of method calls on the **Elf** object to demonstrate the use of clothing enchantments.
+
+The output of this code is:
+
+    You have spawned a [BLONDE KNIGHT] warrior called [HENRIQUE] clothing a [Mercenary Armor] and holding a [Emperor Blade Sword]
+    You attacked the enemy with the Emperor Blade Sword
+    [HENRIQUE] added the [Corrupted Mind Enchantment] in the current socket [1] on the [Emperor Blade Sword]
+    [HENRIQUE] is activating the current enchantment socket [1] from the [Emperor Blade Sword], the [Corrupted Mind Enchantment]. The enchantment Corrupted Mind Enchantment has been activated.
+    [HENRIQUE] is deactivating the current enchantment socket [1] from the [Emperor Blade Sword], the [Corrupted Mind Enchantment]. The enchantment Corrupted Mind Enchantment has been deactivated.
+    [HENRIQUE] tried to add [Fury Enchantment], but there is already an Enchantment in the current socket [1] on the [Emperor Blade Sword]
+    [HENRIQUE] removed the [Corrupted Mind Enchantment] from the current socket [1] on the [Emperor Blade Sword]
+    [HENRIQUE] tried to activate the current enchantment, but there is no Enchantment in the current socket [1] on the [Emperor Blade Sword]
+    [HENRIQUE] have changed to the next enchantment socket [2] from the [Emperor Blade Sword], which is empty
+    [HENRIQUE] added the [Sigil Enchantment] in the current socket [2] on the [Emperor Blade Sword]
+    [HENRIQUE] is activating the current enchantment socket [2] from the [Emperor Blade Sword], the [Sigil Enchantment]. The enchantment Sigil Enchantment has been activated.
+    [HENRIQUE] is activating the current enchantment socket [2] from the [Emperor Blade Sword], the [Sigil Enchantment]. The Enchantment is already activated
+    [HENRIQUE] is deactivating the current enchantment socket [2] from the [Emperor Blade Sword], the [Sigil Enchantment]. The enchantment Sigil Enchantment has been deactivated.
+    [HENRIQUE] have changed to the next enchantment socket [3] from the [Emperor Blade Sword], which is empty
+    [HENRIQUE] have changed to the previous enchantment socket [2] from the [Emperor Blade Sword], the [Sigil Enchantment]
+    [HENRIQUE] is activating the current enchantment socket [2] from the [Emperor Blade Sword], the [Sigil Enchantment]. The enchantment Sigil Enchantment has been activated.
+    
+    
+    You have spawned a [REDHEAD ELF] warrior called [ELLIE] clothing a [Executioner Garb] and holding a [Winged Bow]
+    [ELLIE] added the [Sigil Enchantment] in the current socket [1] on the [Executioner Garb]
+    [ELLIE] is activating the current enchantment socket [1] from the [Executioner Garb], the [Sigil Enchantment]. The enchantment Sigil Enchantment has been activated.
+    [ELLIE] is deactivating the current enchantment socket [1] from the [Executioner Garb], the [Sigil Enchantment]. The enchantment Sigil Enchantment has been deactivated.
+    [ELLIE] tried to add [Fury Enchantment], but there is already an Enchantment in the current socket [1] on the [Executioner Garb]
+    [ELLIE] removed the [Sigil Enchantment] from the current socket [1] on the [Executioner Garb]
+    [ELLIE] have changed to the next enchantment socket [1] from the [Executioner Garb], which is empty
+    [ELLIE] tried to activate the current enchantment, but there is no Enchantment in the current socket [1] on the [Executioner Garb]
+    [ELLIE] tried to activate the current enchantment, but there is no Enchantment in the current socket [1] on the [Executioner Garb]
+    [ELLIE] have changed to the previous enchantment socket [1] from the [Executioner Garb], which is empty
+    [ELLIE] tried to activate the current enchantment, but there is no Enchantment in the current socket [1] on the [Executioner Garb]
+    
+
