@@ -2,8 +2,10 @@ package specialabilitiestree.warrior;
 
 import specialabilitiestree.common.ISpecialAbilityAdapter;
 import specialabilitiestree.common.ISpecialAbilityAdapterFactory;
+import specialabilitiestree.specialability.SpecialAbility;
+import specialabilitiestree.specialability.SpecialAbilityTree;
 
-public class Warrior<A> {
+public class Warrior<SpecialAbilityType extends SpecialAbility> {
     private String name;
 
     private WarriorClass warriorClass;
@@ -14,7 +16,11 @@ public class Warrior<A> {
 
     private IWeapon weapon;
 
-    private ISpecialAbilityAdapterFactory<A> specialAbilityAdapterFactory;
+    private ISpecialAbilityAdapterFactory<SpecialAbilityType> specialAbilityAdapterFactory;
+
+    private SpecialAbilityTree<SpecialAbilityType> specialAbilityTree;
+
+
 
     public String getName() {
         return name;
@@ -40,19 +46,39 @@ public class Warrior<A> {
         this.weapon = weapon;
     }
 
-    public ISpecialAbilityAdapterFactory<A> getSpecialAbilityAdapterFactory() {
+    public ISpecialAbilityAdapterFactory<SpecialAbilityType> getSpecialAbilityAdapterFactory() {
         return specialAbilityAdapterFactory;
     }
 
-    public void setSpecialAbilityAdapterFactory(ISpecialAbilityAdapterFactory<A> specialAbilityAdapterFactory) {
+    public void setSpecialAbilityAdapterFactory(ISpecialAbilityAdapterFactory<SpecialAbilityType> specialAbilityAdapterFactory) {
         this.specialAbilityAdapterFactory = specialAbilityAdapterFactory;
     }
 
-    public void useAbility(A specialAbility, String...destinations){
+    public void setSpecialAbilityTree(SpecialAbilityTree<SpecialAbilityType> specialAbilityTree) {
+        this.specialAbilityTree = specialAbilityTree;
+    }
+
+    public void useAbility(SpecialAbilityType specialAbility, String...destinations){
         ISpecialAbilityAdapter specialAbilityAdapter = specialAbilityAdapterFactory
                 .getSpecialAbilityAdapterBySpecialAbilityType(specialAbility);
 
-        specialAbilityAdapter.useSpecialAbility(this, destinations);
+        if(specialAbilityAdapter == null)
+            System.out.println(name + " does not have the ability " + specialAbility);
+        else
+            specialAbilityAdapter.useSpecialAbility(this, destinations);
+    }
+
+    public boolean acquireSpecialAbility(SpecialAbilityType specialAbility){
+        if (specialAbilityTree.canAcquireAbility(specialAbility)) {
+            specialAbilityAdapterFactory.addAcquiredSpecialAbility(specialAbility);
+            return true;
+        }
+        return false;
+    }
+
+    public void displaySpecialAbilities() {
+        System.out.println("Special abilities for " + getName() + ":");
+        specialAbilityTree.displayTree(specialAbilityAdapterFactory.getAcquiredSpecialAbilities());
     }
 
     @Override

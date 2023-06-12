@@ -1,6 +1,8 @@
 package specialabilitiestree.warrior;
 
-public abstract class WarriorBuilder<S extends WarriorBuilder<S,A>, A>{
+import specialabilitiestree.specialability.SpecialAbility;
+
+public abstract class WarriorBuilder<S extends WarriorBuilder<S,A>, A extends SpecialAbility>{
 
     protected Warrior<A> warrior = new Warrior<>();
 

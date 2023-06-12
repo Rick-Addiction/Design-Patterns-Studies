@@ -26,8 +26,13 @@ public class Main {
                 .withStaff(Staff.INCINERATION).build();
 
         System.out.println(sorcerer);
+        sorcerer.acquireSpecialAbility(SorcererSpecialAbility.TELEKINESIS);
+        sorcerer.displaySpecialAbilities();
+
+
 
         sorcerer.useAbility(SorcererSpecialAbility.TELEKINESIS,"Container");
+
         sorcerer.useAbility(SorcererSpecialAbility.SHIELDING,"William");
         sorcerer.useAbility(SorcererSpecialAbility.HEALING,"William", "Jeff", "Camilla");
 
@@ -38,6 +43,8 @@ public class Main {
                 .withSword(Sword.KATANA).build();
 
         System.out.println(knight);
+
+        knight.displaySpecialAbilities();
 
         knight.useAbility(KnightSpecialAbility.BERSERK);
         knight.useAbility(KnightSpecialAbility.CYCLONE,"Garry", "Thomas");
@@ -50,6 +57,8 @@ public class Main {
                 .withBow(Bow.RAIDER).build();
 
         System.out.println(elf);
+
+        elf.displaySpecialAbilities();
 
         elf.useAbility(ElfSpecialAbility.AGILITY);
         elf.useAbility(ElfSpecialAbility.CONCENTRATION,"Garry", "Thomas");
