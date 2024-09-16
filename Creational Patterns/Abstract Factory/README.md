@@ -85,16 +85,21 @@ The **CorruptionBlacksmith** class is a Blacksmith interface implementation. It 
 
 Threfore, this class is part of the Abstract Factory Design pattern, regarding that the **Blacksmith** interface acts as the **Abstract Factory** and each of its implementations, such as **CorruptionBlacksmith**, are **Concrete Factories** used to make objects of a certain type.
 
-### Why Builder Pattern?
-The Abstract Factory pattern was chosen for this problem due to the following reasons:
+### Why Abstract Factory Pattern?
 
-- **Provides a common interface for creating related objects:** The Abstract Factory pattern is ideal when we **need to create families of related objects**. In our problem, the blacksmith **needs to create a sword, armor, and shield,** each of which is related to the others in terms of their purpose and attributes.
+The **Abstract Factory Pattern** is used to **create families of related or dependent objects without specifying their concrete classes**. It works by providing a common interface for creating different types of objects, where each concrete factory (like **CorruptionBlacksmith** or **EmperorBlacksmith**) is responsible for producing a specific set of related objects (like swords, armor, and shields). This structure allows us to **centralize and standardize object creation**.
 
-- **Encapsulates object creation:** By encapsulating object creation in a separate factory object, we can ensure that the **creation of objects is centralized and consistent**. In our problem, **each Blacksmith has its own factory object** that creates swords, armor, and shields with the same attributes.
+For the game, the pattern is a perfect fit because:
 
-- **Enables easy substitution of object families:** By using the Abstract Factory pattern, we can **easily substitute different families of objects** without affecting the rest of the code. In our problem, we can easily swap out the **Emperor**, **Corruption**, or **Mercenary** families of swords, armor, and shields by changing the blacksmith that is used.
+- **Encapsulates object creation**: The Abstract Factory pattern **encapsulates the creation of different types of related equipment** into distinct factories (blacksmiths). Each blacksmith (factory) knows how to forge its own specific items, ensuring that items like **Corruption Sword** and **Corruption Armor** are created consistently with the same attributes.
+  
+- **Simplifies adding new families of items**: Adding new blacksmiths and equipment (like a "Royal Blacksmith") is straightforward. You simply implement a new factory and new equipment types without modifying the existing code, **promoting easy maintenance and extension**.
 
-- **Promotes consistency:** Because the Abstract Factory pattern centralizes the creation of related objects, it helps ensure that those objects are consistent in terms of their attributes and behavior. In our problem, each blacksmith factory creates objects with a consistent set of attributes, which makes it easier to reason about and use those objects in the rest of the code.
+- **Ensures consistency**: Each blacksmith uses predefined rules to create items with **consistent properties**. For instance, all items forged by the **CorruptionBlacksmith** will follow the same design and attribute structure, such as durability and protection levels, maintaining **uniformity** across the game's equipment.
+
+- **Enables easy substitution of object families**: The pattern allows you to **easily switch between different blacksmiths (factories)** without altering the core game logic. For example, swapping the **CorruptionBlacksmith** with an **EmperorBlacksmith** is as simple as instantiating a different factory, keeping the code **flexible and modular**.
+
+In summary, the **Abstract Factory Pattern** makes it easier to **manage, maintain, and extend the equipment system** in your game by decoupling the creation of related objects from the game logic itself. This promotes **flexibility and consistency** across different types of equipment.
 
 ### How to Use the Code
 
