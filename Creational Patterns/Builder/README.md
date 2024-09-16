@@ -78,12 +78,21 @@ We then implement the **withGarb()** and **withBow()** methods to set the **Garb
 Finally, we implement the **build()** method to return the warrior object, which contains all the properties that we've set in the concrete builder class.
 
 ### Why Builder Pattern?
-We are using the Builder pattern for the following reasons:
+The **Builder Pattern** is used to **construct complex objects step by step**, separating the construction process from the final representation. The main purpose of this pattern is to allow flexibility in how an object is built, so you can create variations of an object while reusing the same construction code.
 
-- To provide a flexible and step-by-step approach to create complex objects.
-- To separate the construction of an object from its representation and allow creating different representations of an object using the same construction process.
-- To create warriors with different classes, clothing, weapons, hair colors, and names in a less error-prone and more natural way.
-- To enable adding or modifying properties easily without modifying the client code.
+In this case, the **Warrior Spawner** needs to generate warriors with various attributes like class, clothing, weapon, and hair color. Using the Builder Pattern allows you to **create warriors in a flexible and organized way**, ensuring that each warrior is built according to specific requirements, and attributes can be set **in any order**.
+
+Here’s why the **Builder Pattern** is ideal for this scenario:
+
+- **Flexibility**: The pattern allows warriors to be created step by step, enabling you to choose and apply attributes (like name, hair color, clothing, and weapons) in any sequence. This makes it **easy to customize each warrior's attributes without missing a critical step**.
+  
+- **Separation of concerns**: The Builder Pattern separates **how warriors are created from the final warrior object**, which ensures that each part of the construction process is handled independently. This separation makes the code more maintainable and extensible.
+
+- **Extensibility**: You can easily **add new attributes or classes of warriors** (like new types of weapons or clothing) without changing the core logic of how warriors are built. The builder can be extended to support new features as the game evolves.
+
+- **Reduces complexity**: The pattern simplifies the construction of complex warriors, avoiding long constructors or multiple initialization methods. Instead, you **chain methods** to set each property, making the code easier to read and less error-prone.
+
+In summary, the **Builder Pattern** is an excellent choice for the Warrior Spawner because it provides a **flexible, structured, and easy-to-understand way** to build complex warriors with different attributes while keeping the creation process clean and maintainable.
 
 ### How to Use the Code
 
