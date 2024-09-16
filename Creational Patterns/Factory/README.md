@@ -77,13 +77,19 @@ public class ArrowCrafter {
 ```
 
 ###  Why Factory Pattern??
-The Factory Pattern is an ideal solution for this problem because:
+The **Factory Pattern** is used to **encapsulate object creation** and delegate it to specific classes, allowing for flexibility and scalability. The main purpose is to provide a way to create objects without exposing the instantiation logic, enabling the code to remain flexible as new types of objects are added.
 
-- **Delegated creation of objects:** The creation of different types of arrows is **delegated to a specific class**, the **ArrowCrafter**, which reduces complexity and makes the code more modular and easier to maintain.
+In this case, the **Factory Pattern** is ideal for the **Arrow Crafting** problem because:
 
-- **Extensibility with reflection:** The use of reflection in the ArrowCrafter class allows for the addition of new arrow types without modifying the existing codebase, making the code more extensible.
+- **Delegated object creation**: The creation of different arrow types is handled by the **ArrowCrafter** class, which serves as the factory. This centralizes the creation process and ensures that arrow objects are instantiated with consistent properties, reducing complexity and improving code modularity.
+  
+- **Extensibility**: The pattern allows you to easily add new types of arrows (such as a new **Poison Arrow**) without altering the existing code. By using reflection, the **ArrowCrafter** class dynamically loads new arrow types, making the system highly extensible.
 
-- **Encapsulation of object creation:** The Factory Method pattern encapsulates the creation of objects, providing a layer of abstraction that allows for **flexibility** and **modularity**. By centralizing the creation of objects, the pattern ensures that each arrow type is created with a **consistent set of attributes and behavior**, which makes the code easier to reason about and use.
+- **Encapsulation of creation logic**: The Factory Pattern hides the details of how specific arrows are created and provides a simple interface for requesting arrows. This means the rest of the code doesn’t need to worry about how to instantiate specific arrow types—just pass the type to the factory and get the correct arrow object.
+
+- **Flexibility and maintainability**: As the gameplay evolves, adding new types of arrows or changing existing ones becomes straightforward. The centralized nature of the **ArrowCrafter** makes it easy to maintain and modify the arrow creation process, ensuring flexibility as the game expands.
+
+In summary, the **Factory Pattern** provides a flexible, modular, and extensible solution for managing the creation of different arrow types in the game. By delegating object creation and encapsulating the logic, it makes the system easy to extend and maintain as new arrow types or properties are introduced.
 
 ### How to Use the Code
 
