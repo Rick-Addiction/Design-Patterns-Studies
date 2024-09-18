@@ -5,7 +5,7 @@
 
 In a medieval RPG game, **Elfs** are talented archers and their  favourite weapon is a **Bow**, which is great for striking enemies from a distance. Even so, simply possessing a bow is insufficient to vanquish the enemy. The Elf must also have the **appropriate arrows for various fighting circumstances**.
 
-The Elf's arsenal of arrows all have specific attributes and abilities that make them appropriate for a range of combat situations. Specific arrows, for example, can cause **fire or ice damage**, while others have a **high pierce capability** and can penetrate the enemy's protection. Additionally, there are arrows have with a **large radius**, allowing them to be effective against multiple enemies, but others are **best suited for single-target damage**. The different types of arrows available to the Elf are as follows:
+The Elf's arsenal of arrows all have specific attributes and abilities that make them appropriate for a range of combat situations. Specific arrows, for example, can cause **fire or ice damage**, while others have a **high pierce capability** and can penetrate the enemy's protection. Additionally, there are arrows with a **large radius**, allowing them to be effective against multiple enemies, but others are **best suited for single-target damage**. The different types of arrows available to the Elf are as follows:
 
 | Arrow Type | Damage | Pierce | Radius |
 | ------------- | ---------- | ------ | ------------- |
@@ -23,7 +23,7 @@ Instead of directly creating objects, the Factory Method Design Pattern **delega
 
 <img src="https://github.com/Rick-Addiction/Design-Patterns-Studies/blob/master/Creational Patterns/Factory/doc/ARROW_CRAFTING.png?raw=true" width="100%"></img>
 
-To start implementing the Factory Pattern, we constructed an** abstract Arrow class** which might serve as the **base class for all arrow types**. Damage, pierce, and radius are **all qualities common** by all arrow kinds in the Arrow class.
+To start implementing the Factory Pattern, we constructed an **abstract Arrow class** which might serve as the **base class for all arrow types**. Damage, pierce, and radius are **all qualities common** by all arrow kinds in the Arrow class.
 
 ```java
 public abstract class Arrow {
@@ -83,7 +83,7 @@ The Factory Pattern is an ideal solution for this problem because:
 
 - **Extensibility with reflection:** The use of reflection in the ArrowCrafter class allows for the addition of new arrow types without modifying the existing codebase, making the code more extensible.
 
-- **Encapsulation of object creation:** The Factory Method pattern encapsulates the creation of objects, providing a layer of abstraction that allows for **flexibility** and **modularity**. By centralizing the creation of objects, the pattern ensures that each arrow type is created with a **consistent set of attributes and behavior**, which makes the code easier to reason about and use.
+- **Encapsulation of object creation:** The Factory Method pattern encapsulates the creation of objects, providing a layer of abstraction that allows for **flexibility** and **modularity**. By centralizing the creation of objects, the pattern ensures that each arrow type is created with a **consistent set of attributes and behavior**, which makes the code easier to understand and use.
 
 ### How to Use the Code
 

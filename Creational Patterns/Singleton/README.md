@@ -3,7 +3,7 @@
 
 ### Problem
 
-In the <a href="https://github.com/Rick-Addiction/Design-Patterns-Studies/tree/master/Creational Patterns/Factory">Factory Pattern section</a>, we created an ArrowCrafter class responsible for crafting different types of arrows. And now, as an extesion of the previous project, we will have a Materials Managements System. So, the ArrowCrafter class will require specific crafting materials, such as wood, stone, cloth, and magic essence, to craft each arrow.
+In the <a href="https://github.com/Rick-Addiction/Design-Patterns-Studies/tree/master/Creational Patterns/Factory">Factory Pattern section</a>, we created an ArrowCrafter class responsible for crafting different types of arrows. And now, as an extension of the previous project, we will have a Materials Managements System. So, the ArrowCrafter class will require specific crafting materials, such as wood, stone, cloth, and magic essence, to craft each arrow.
 
 | Arrow Type | Wood | Stone | Cloth | Magic Essence |
 |------------|------|-------|-------|---------------|
@@ -71,7 +71,7 @@ public class CraftingMaterialsAvailable {
 ```
 Again, the **INSTANCE** variable is a **private static constant** that holds the **single instance of the CraftingMaterialsAvailable** class. The constructor of the class is **private**, and the only way to get an instance of the class is by calling the **getInstance()** method.
 
-When an **arrow** is created, the **ArrowCrafter** class is responsible for** managing the materials required to craft the arrow**. Here is an example code that shows how this works:
+When an **arrow** is created, the **ArrowCrafter** class is responsible for **managing the materials required to craft the arrow**. Here is an example code that shows how this works:
 
 ```java
 public class ArrowCrafter {
@@ -129,7 +129,7 @@ The Java code consists of the following files:
 - **ArrowType.java:** An enum class that represents the types of Arrows available in the game. It contains three types: Fire, Ice, and Shock. This class also contains a method to obtain an ArrowType from a String.
 - **FireArrow.java, IceArrow.java, ShockArrow.java:** Classes that inherit from the Arrow class and represent each specific Arrow Type. They set the base attributes according to their Arrow Type.
 - **ArrowCrafter.java:** This class is responsible for crafting the Arrows. It uses the Singleton Pattern to access the Material Management System, which contains the required materials for each Arrow Type. It also checks if the player has enough materials to craft a specific Arrow Type. If the player has enough materials, it uses the Reflections library to obtain the correct class to instantiate the Arrow Type. Finally, it returns the instantiated Arrow.
-- **MaterialsRequiredToCraft.java: **A class that contains a dictionary of ArrowType and RequiredMaterials. This class is responsible for reading the required materials to craft each Arrow Type from a text file.
+- **MaterialsRequiredToCraft.java:** A class that contains a dictionary of ArrowType and RequiredMaterials. This class is responsible for reading the required materials to craft each Arrow Type from a text file.
 - **RequiredMaterials.java:** A class that represents the required materials to craft an Arrow Type. It contains the necessary amount of Wood, Magic Essence, Stone, and Cloth.
 - **CraftingMaterialsAvailable.java:** A class that contains the available crafting materials. It uses the Singleton Pattern to ensure that there is only one instance of the class, and it has methods to add and remove the crafting materials.
 

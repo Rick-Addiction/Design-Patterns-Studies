@@ -3,7 +3,7 @@
 
 ### Problem
 
-In a medieval RPG game, players need equip their characters** with different weapons, armor vests, and shields** in order to battle against monsters and other players. To obtain the best equipment, they must locate **qualified Blacksmiths** who can forge them.
+In a medieval RPG game, players need equip their characters **with different weapons, armor vests, and shields** in order to battle against monsters and other players. To obtain the best equipment, they must locate **qualified Blacksmiths** who can forge them.
 
 There are various types of blacksmiths in the game, each specialised in a specific type of equipment. **Blacksmiths** can forge the following items, according to their type:
 
@@ -22,7 +22,7 @@ There are various types of blacksmiths in the game, each specialised in a specif
 
 Each type of equipment has specific attributes such as physical protection, fire protection, ice protection, shock protection, attack damage, critical strike chance, chance to block, durability, and weight. Here is a table for the attributes and their values for each type of equipment:
 
-- **Sword Table:**
+- **Swords:**
 
 | Type of Sword | Durability | Weight | Attack Damage | Critical Strike Chance |
 | ------------- | ---------- | ------ | ------------- | ---------------------- |
@@ -30,7 +30,7 @@ Each type of equipment has specific attributes such as physical protection, fire
 | **Emperor Sword** | 400 | 7 | 100 | 30% |
 | **Mercenary Sword** | 550 | 9 | 80 | 60% |
 
-- **Armor Table:**
+- **Armors:**
 
 | Type of Armor | Durability | Weight | Physical Protection | Fire Protection | Ice Protection | Shock Protection |
 | ------------- | ---------- | ------ | ------------------ | --------------- | -------------- | ---------------- |
@@ -38,7 +38,7 @@ Each type of equipment has specific attributes such as physical protection, fire
 | **Emperor Armor** | 200 | 33 | 300 | 100 | 5 | 90 |
 | **Mercenary Armor** | 100 | 23 | 500 | 50 | 100 | 50 |
 
-- **Shield Table:**
+- **Shields:**
 
 | Type of Shield | Durability | Weight | Chance to Block | Attack Damage | Physical Protection | Fire Protection | Ice Protection | Shock Protection |
 | -------------- | ---------- | ------ | --------------- | ------------- | ------------------ | --------------- | -------------- | ---------------- |
@@ -85,7 +85,7 @@ The **CorruptionBlacksmith** class is a Blacksmith interface implementation. It 
 
 Threfore, this class is part of the Abstract Factory Design pattern, regarding that the **Blacksmith** interface acts as the **Abstract Factory** and each of its implementations, such as **CorruptionBlacksmith**, are **Concrete Factories** used to make objects of a certain type.
 
-### Why Builder Pattern?
+### Why Abstract Factory Pattern?
 The Abstract Factory pattern was chosen for this problem due to the following reasons:
 
 - **Provides a common interface for creating related objects:** The Abstract Factory pattern is ideal when we **need to create families of related objects**. In our problem, the blacksmith **needs to create a sword, armor, and shield,** each of which is related to the others in terms of their purpose and attributes.

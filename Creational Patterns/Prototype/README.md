@@ -3,13 +3,11 @@
 
 ### Problem
 
-In the context of a hypothetical medieval RPG game with** different warrior types**, such as **Knight**, **Elf**, and **Sorcerer**, which expands on the solution developed for the <a href="https://github.com/Rick-Addiction/Design-Patterns-Studies/tree/master/Creational Patterns/Builder">**Builder pattern section**</a>, each class has their own builder class in this solution, allowing us to create warriors with **specific attributes**.
+In the context of a hypothetical medieval RPG game with **different warrior types**, such as **Knight**, **Elf**, and **Sorcerer**, which expands on the solution developed for the <a href="https://github.com/Rick-Addiction/Design-Patterns-Studies/tree/master/Creational Patterns/Builder">**Builder pattern section**</a>, each class has their own builder class in this solution, allowing us to create warriors with **specific attributes**.
 
 Creating warriors in an RPG game can be **tedious and time-consuming**, especially if many of them has the **same attributes**. If we start with each warrior from scratch, we must set all of its attributes one by one, what may be **time-consuming, error-prone, and inefficient**, especially if we need to create a large number of warriors with the same attributes. 
 
-Furthermore, in case we want to **change a warrior's attribute**, we would need to manually **update all of its clones**, what would become difficult, especially if we had a large number of similar warriors.
-
-In order to solve this problem, we will need to find a way to **generate new warriors without having to manually set all of their attributes**, one by one. Besides that, we need a way to update a warrior's attribute and have the **change immediately applied to all of its clones**.
+In order to solve this problem, we will need to find a way to **generate new warriors without having to manually set all of their attributes**, one by one.
 
 ### Solution
 
